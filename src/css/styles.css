@@ -1,0 +1,71 @@
+/* src/css/styles.css */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #222;
+  font-family: sans-serif;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;           /* fill available space */
+  max-width: 800px;      /* cap at 800px on large screens */
+  aspect-ratio: 16 / 9;  /* maintain a 16:9 ratio */
+  margin: 0 auto;        /* center horizontally */
+  overflow: hidden;
+  border: 4px solid #fff;
+  border-radius: 8px;
+  background: #000;
+}
+
+.slides {
+  display: flex;
+  height: 100%;          /* fill the carousel’s height */
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;       /* each slide exactly one carousel–width */
+  height: 100%;
+  user-select: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* crop/scale to fill without distortion */
+  display: block;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.nav:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
